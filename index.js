@@ -1,30 +1,11 @@
-const auth_link = "https://www.strava.com/oauth/token"
+require('dotenv').config()
 
-function getActivites(res){
+function authorize(){
 
-    const activities_link = `https://www.strava.com/api/v3/athlete/activities?access_token=${res.access_token}`
-    fetch(activities_link)
-        .then((res) => console.log(res.json()))
+    const client_id = process.env.CLIENT_ID;
+    //const client_secret = process.env.CLIENT_SECRET;
+    const redirectUrl = 'http://localhost:63342/Strava-API-Testing/redirect.html'
+
+
+    window.location = `https://www.strava.com/oauth/authorize?client_id=${client_id}&redirect_uri=${redirectUrl}&response_type=code&scope=activity:read_all`;
 }
-
-function reAuthorize(){
-    fetch(auth_link,{
-        method: 'post',
-        headers: {
-            'Accept': 'application/json, text/plain, */*',
-            'Content-Type': 'application/json'
-
-        },
-
-        body: JSON.stringify({
-
-            client_id: 'xxxx',
-            client_secret: 'xxxx',
-            refresh_token: 'xxxx',
-            grant_type: 'refresh_token'
-        })
-    }).then(res => res.json())
-        .then(res => getActivites(res))
-}
-
-reAuthorize()
