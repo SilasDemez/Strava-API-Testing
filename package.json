@@ -1,0 +1,8 @@
+{
+  "name": "Strava-API-Testing",
+  "version": "1.0.0",
+  "dependencies": {},
+  "devDependencies": {
+    "dotenv": "^10.0.0"
+  }
+}
