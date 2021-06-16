@@ -1,8 +1,26 @@
 {
-  "name": "Strava-API-Testing",
+  "name": "strava-api-testing",
   "version": "1.0.0",
   "dependencies": {},
   "devDependencies": {
     "dotenv": "^10.0.0"
+  },
+  "description": "trying around with the strava API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SilasDemez/Strava-API-Testing.git"
+  },
+  "author": "Silas Demez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SilasDemez/Strava-API-Testing/issues"
+  },
+  "homepage": "https://github.com/SilasDemez/Strava-API-Testing#readme",
+  "engines": {
+    "node": "14.16.0"
   }
 }
