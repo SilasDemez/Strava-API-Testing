@@ -1,3 +1,6 @@
+require('dotenv').config()
+
+const client_secret = process.env.CLIENT_SECRET;
 const auth_link = "https://www.strava.com/oauth/token";
 
 
@@ -41,7 +44,7 @@ async function getTokens(auth_token){
         body: JSON.stringify({
 
             client_id: '67034',
-            client_secret: 'd8342e4105460e9f836cac614f3e4263eca1f0c1',
+            client_secret: client_secret,
             code: auth_token,
             grant_type: 'authorization_code'
         })
@@ -62,7 +65,7 @@ function reAuthorize(){
         body: JSON.stringify({
 
             client_id: '67034',
-            client_secret: 'd8342e4105460e9f836cac614f3e4263eca1f0c1 ',
+            client_secret: client_secret,
             refresh_token: refresh_token,
             grant_type: 'refresh_token'
         })
